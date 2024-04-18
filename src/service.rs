@@ -85,7 +85,6 @@ impl<DP: GenericDevicePlugin> DevicePlugin for DP {
                 }
                 sleep(DP::DEVICE_POLL_INTERVAL).await;
             }
-            info!("list and watch disconnected!");
         });
         Ok(Response::new(Box::pin(ReceiverStream::new(rx))))
     }
